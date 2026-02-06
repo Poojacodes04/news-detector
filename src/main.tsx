@@ -1,0 +1,9 @@
+import { createRoot } from "react-dom/client";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/700.css";
+import "@fontsource/fredoka/400.css";
+import "@fontsource/fredoka/700.css";
+import App from "./App.tsx";
+import "./index.css";
+
+createRoot(document.getElementById("root")!).render(<App />);
