@@ -4,6 +4,8 @@ import WelcomeSplash from "@/components/WelcomeSplash";
 import TrainingRoom from "@/components/TrainingRoom";
 import InvestigationLab from "@/components/InvestigationLab";
 import ResultsArea from "@/components/ResultsArea";
+import { Button } from "@/components/ui/button";
+import { NavLink } from "@/components/NavLink";
 
 type Stage = "welcome" | "training" | "investigate" | "results";
 
@@ -123,6 +125,26 @@ const Index = () => {
         <p className="mt-2 text-xs">
           Remember: AI is a tool, not a truth machine! Always think critically. 🧠✨
         </p>
+        <div className="mt-4 flex flex-wrap justify-center gap-2 px-4">
+          <Button asChild variant="ghost" className="rounded-full">
+            <NavLink to="/learn">Interactive Learning</NavLink>
+          </Button>
+          <Button asChild variant="ghost" className="rounded-full">
+            <NavLink to="/how-ai-works">How AI Works</NavLink>
+          </Button>
+          <Button asChild variant="ghost" className="rounded-full">
+            <NavLink to="/dataset">Dataset</NavLink>
+          </Button>
+          <Button asChild variant="ghost" className="rounded-full">
+            <NavLink to="/limitations">Limitations</NavLink>
+          </Button>
+          <Button asChild variant="ghost" className="rounded-full">
+            <NavLink to="/faq">FAQ</NavLink>
+          </Button>
+          <Button asChild variant="ghost" className="rounded-full">
+            <NavLink to="/teacher">Teacher Mode</NavLink>
+          </Button>
+        </div>
       </footer>
     </div>
   );
