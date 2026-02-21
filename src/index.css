@@ -6,60 +6,61 @@
 
 @layer base {
   :root {
-    --background: 240 30% 12%;
-    --foreground: 60 30% 96%;
+    /* Light, kid-friendly palette */
+    --background: 210 100% 98%;
+    --foreground: 230 25% 20%;
 
-    --card: 240 25% 18%;
-    --card-foreground: 60 30% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 20%;
 
-    --popover: 240 25% 18%;
-    --popover-foreground: 60 30% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 20%;
 
-    /* Deep Purple Primary */
-    --primary: 270 70% 55%;
-    --primary-foreground: 60 30% 96%;
+    /* Bright playful primary (purple) */
+    --primary: 270 80% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Electric Blue Secondary */
-    --secondary: 210 100% 55%;
-    --secondary-foreground: 60 30% 96%;
+    /* Electric blue secondary */
+    --secondary: 210 90% 55%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 20% 25%;
-    --muted-foreground: 240 10% 65%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 220 15% 40%;
 
-    /* Neon Yellow Accent */
-    --accent: 50 100% 50%;
-    --accent-foreground: 240 30% 12%;
+    /* Sunny accent yellow */
+    --accent: 48 100% 55%;
+    --accent-foreground: 222 47% 11%;
 
-    /* Danger Red for Fake */
-    --destructive: 0 85% 55%;
-    --destructive-foreground: 60 30% 96%;
+    /* Danger red for Fake */
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Success Green for Real */
-    --success: 140 75% 45%;
-    --success-foreground: 60 30% 96%;
+    /* Success green for Real */
+    --success: 142 60% 45%;
+    --success-foreground: 0 0% 100%;
 
-    /* Bright Orange */
-    --orange: 25 100% 55%;
-    --orange-foreground: 60 30% 96%;
+    /* Bright orange */
+    --orange: 24 100% 60%;
+    --orange-foreground: 0 0% 100%;
 
-    /* Lime Green */
-    --lime: 85 80% 50%;
-    --lime-foreground: 240 30% 12%;
+    /* Lime accent */
+    --lime: 90 80% 50%;
+    --lime-foreground: 222 47% 11%;
 
-    --border: 240 20% 30%;
-    --input: 240 20% 25%;
-    --ring: 270 70% 55%;
+    --border: 210 20% 85%;
+    --input: 210 30% 92%;
+    --ring: 270 80% 60%;
 
     --radius: 1rem;
 
-    --sidebar-background: 240 30% 10%;
-    --sidebar-foreground: 60 30% 96%;
-    --sidebar-primary: 270 70% 55%;
-    --sidebar-primary-foreground: 60 30% 96%;
-    --sidebar-accent: 240 25% 20%;
-    --sidebar-accent-foreground: 60 30% 96%;
-    --sidebar-border: 240 20% 25%;
-    --sidebar-ring: 270 70% 55%;
+    --sidebar-background: 210 100% 97%;
+    --sidebar-foreground: 230 25% 20%;
+    --sidebar-primary: 270 80% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 94%;
+    --sidebar-accent-foreground: 230 25% 20%;
+    --sidebar-border: 210 20% 85%;
+    --sidebar-ring: 270 80% 60%;
   }
 }
 
@@ -70,7 +71,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Comic Neue", "Nunito", "Segoe UI", sans-serif;
+    font-family: "Comic Neue", "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
   }
 }
 
@@ -94,35 +95,32 @@
   }
 
   .bg-detective {
-    background: linear-gradient(
-      180deg,
-      hsl(240 30% 8%) 0%,
-      hsl(240 30% 12%) 50%,
-      hsl(260 30% 15%) 100%
-    );
+    background: radial-gradient(circle at top left, hsl(210 100% 95%), transparent 55%),
+      radial-gradient(circle at top right, hsl(270 100% 96%), transparent 55%),
+      linear-gradient(180deg, hsl(210 100% 98%) 0%, hsl(200 100% 96%) 50%, hsl(190 100% 95%) 100%);
   }
 
   .card-case-file {
     @apply bg-card border-2 border-border rounded-2xl;
     box-shadow:
-      0 4px 20px -4px hsla(270, 70%, 55%, 0.3),
-      0 0 40px -10px hsla(210, 100%, 55%, 0.2);
+      0 6px 18px -6px hsla(210, 40%, 40%, 0.16),
+      0 0 0 1px hsla(210, 20%, 80%, 0.7);
   }
 
   .glow-primary {
-    box-shadow: 0 0 30px hsla(270, 70%, 55%, 0.5);
+    box-shadow: 0 0 25px hsla(270, 80%, 60%, 0.4);
   }
 
   .glow-accent {
-    box-shadow: 0 0 30px hsla(50, 100%, 50%, 0.5);
+    box-shadow: 0 0 25px hsla(48, 100%, 55%, 0.5);
   }
 
   .glow-success {
-    box-shadow: 0 0 30px hsla(140, 75%, 45%, 0.5);
+    box-shadow: 0 0 25px hsla(142, 60%, 45%, 0.45);
   }
 
   .glow-destructive {
-    box-shadow: 0 0 30px hsla(0, 85%, 55%, 0.5);
+    box-shadow: 0 0 25px hsla(0, 80%, 60%, 0.45);
   }
 
   .stamp-fake {
@@ -138,7 +136,7 @@
   }
 
   .tape {
-    background: hsla(50, 80%, 70%, 0.7);
+    background: hsla(48, 100%, 80%, 0.9);
     transform: rotate(-2deg);
   }
 }
